@@ -26,6 +26,12 @@ public class BooksController {
         return booksRepository.saveAndFlush(booksEntity);
     }
 
+    @PutMapping("/rest/books/{id}")
+    public BooksEntity updateBooks(@PathVariable Long id,
+                                   @RequestBody BooksEntity booksEntity) {
+        return booksRepository.saveAndFlush(booksEntity.setId(id));
+    }
+
     @DeleteMapping("/rest/books/{id}")
     public void delete(@PathVariable Long id) {
         booksRepository.deleteById(id);
