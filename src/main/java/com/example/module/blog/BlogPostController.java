@@ -25,6 +25,6 @@ public class BlogPostController {
     @RequestMapping(path = "/blog/posts/{uuid}", method = RequestMethod.GET)
     public String getPost(@PathVariable("uuid") String uuid, Model model){
         model.addAttribute("post", postMemoryStorageService.getPost(uuid).get());
-        return "blog/posts";
+        return "blog/post";
     }
 }

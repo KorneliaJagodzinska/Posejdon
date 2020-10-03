@@ -8,12 +8,13 @@ public class PostDto {
     private String text;
 
     public PostDto(String uuid, String title, String text) {
-        this.uuid = UUID.randomUUID().toString();
+        this.uuid = uuid;
         this.title = title;
         this.text = text;
     }
 
     public PostDto(String title, String text) {
+        this.uuid=UUID.randomUUID().toString();
         this.title = title;
         this.text = text;
     }
