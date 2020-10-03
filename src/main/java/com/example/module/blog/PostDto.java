@@ -1,12 +1,14 @@
 package com.example.module.blog;
 
+import java.util.UUID;
+
 public class PostDto {
-    private String iiid;
+    private String uuid;
     private String title;
     private String text;
 
-    public PostDto(String iiid, String title, String text) {
-        this.iiid = iiid;
+    public PostDto(String uuid, String title, String text) {
+        this.uuid = UUID.randomUUID().toString();
         this.title = title;
         this.text = text;
     }
@@ -16,8 +18,8 @@ public class PostDto {
         this.text = text;
     }
 
-    public String getIiid() {
-        return iiid;
+    public String getUuid() {
+        return uuid;
     }
 
     public String getTitle() {
