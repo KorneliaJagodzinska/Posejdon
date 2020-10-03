@@ -1,6 +1,12 @@
 package com.example.module.books;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "books")
 public class BooksEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String author;
     private String title;
