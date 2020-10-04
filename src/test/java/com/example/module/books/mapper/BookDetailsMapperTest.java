@@ -18,7 +18,7 @@ public class BookDetailsMapperTest {
     private BookDetailsMapper bookDetailsMapper;
 
     private static final String ISBN = "000";
-    public static final String LANG = "PL";
+    private static final String LANG = "PL";
 
 
     @Test
