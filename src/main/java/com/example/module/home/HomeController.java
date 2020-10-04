@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @Autowired
     private HomeService homeService;
-    @RequestMapping("/")
+    @RequestMapping({"/", "/index.html", "/index.php"})
     public String getHome(Model model){
         model.addAttribute("greetings", homeService.getGreetings());
         return "home";
