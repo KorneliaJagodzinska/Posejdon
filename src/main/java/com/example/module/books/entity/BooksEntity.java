@@ -62,4 +62,8 @@ public class BooksEntity {
         this.details = details;
         return this;
     }
+
+    public BooksDetailsEntity getDetails() {
+        return details;
+    }
 }
