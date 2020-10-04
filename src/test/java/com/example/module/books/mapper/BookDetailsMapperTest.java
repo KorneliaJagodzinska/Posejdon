@@ -17,6 +17,10 @@ public class BookDetailsMapperTest {
     @InjectMocks
     private BookDetailsMapper bookDetailsMapper;
 
+    private static final String ISBN = "000";
+    public static final String LANG = "PL";
+
+
     @Test
     public void shouldReturnNotNullObject() {
         //given
@@ -25,6 +29,19 @@ public class BookDetailsMapperTest {
         BookDetailsDto dto = bookDetailsMapper.map(details);
         //then
         assertThat(dto).isNotNull();
+    }
+
+    @Test
+    public void name(){
+        //given
+        BooksDetailsEntity details= new BooksDetailsEntity()
+                .setIsbn(ISBN)
+                .setLang(LANG);
+        //when
+        BookDetailsDto dto= bookDetailsMapper.map(details);
+        //then
+        assertThat(dto.getIsbn()).isEqualTo(ISBN);
+        assertThat(dto.getLang()).isEqualTo(LANG);
     }
 
 
