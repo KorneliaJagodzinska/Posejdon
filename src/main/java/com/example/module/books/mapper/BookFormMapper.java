@@ -16,7 +16,6 @@ public class BookFormMapper {
                 .setDetails(getDetails(form))
                 .setTags(getTags(form, entity));
         return entity;
-
     }
 
     private static BooksDetailsEntity getDetails(BookForm form) {
