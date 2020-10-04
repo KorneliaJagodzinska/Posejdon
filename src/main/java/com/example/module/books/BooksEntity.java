@@ -14,6 +14,10 @@ public class BooksEntity {
     @NotNull(message = "Title for book is required")
     private String title;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name= "details_id", referencedColumnName = "id")
+    private BooksDetailsEntity details;
+
     public Long getId() {
         return id;
     }
@@ -38,6 +42,10 @@ public class BooksEntity {
 
     public BooksEntity setTitle(String title) {
         this.title = title;
+        return this;
+    }
+    public BooksEntity setDetails(BooksDetailsEntity details){
+        this.details=details;
         return this;
     }
 }
