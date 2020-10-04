@@ -2,6 +2,7 @@ package com.example.module.books;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Entity
 @Table(name = "books")
@@ -15,8 +16,20 @@ public class BooksEntity {
     private String title;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name= "details_id", referencedColumnName = "id")
+    @JoinColumn(name = "details_id", referencedColumnName = "id")
     private BooksDetailsEntity details;
+
+    @OneToMany(mappedBy = "book")
+    private Set<BooksTagsEntity> tags;
+
+    public Set<BooksTagsEntity> getTags() {
+        return tags;
+    }
+
+    public BooksEntity setTags(Set<BooksTagsEntity> tags) {
+        this.tags = tags;
+        return this;
+    }
 
     public Long getId() {
         return id;
@@ -44,8 +57,9 @@ public class BooksEntity {
         this.title = title;
         return this;
     }
-    public BooksEntity setDetails(BooksDetailsEntity details){
-        this.details=details;
+
+    public BooksEntity setDetails(BooksDetailsEntity details) {
+        this.details = details;
         return this;
     }
 }
