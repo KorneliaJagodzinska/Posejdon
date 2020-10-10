@@ -8,6 +8,7 @@ import java.util.List;
 
 @Configuration
 public class PosejdonConfig {
+
     @Value("${domain}")
     private String domain;
 
