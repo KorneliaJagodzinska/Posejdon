@@ -15,8 +15,8 @@ public class PosejdonConfig {
     @Value("${domain}")
     private String domain;
 
-    @Value("#{'${themes}'.split(',')}")
-    private List<String> themes;
+    @Value("${themes}")
+    private String[] themes;
 
     @Value("${admin.email}")
     private String adminEmail;
@@ -33,7 +33,7 @@ public class PosejdonConfig {
     }
 
     public List<String> getThemes() {
-        return themes;
+        return List.of(themes);
     }
 
     public String getAdminEmail() {
